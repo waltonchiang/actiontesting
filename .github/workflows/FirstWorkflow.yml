@@ -11,7 +11,7 @@ on: # if editing in github.com, use ctrl+space to show options
             - 'releases/**' # try single quotes for special characters
     workflow_dispatch:
 jobs: # define one or more jobs
-    first_job: # one job runs on one runner
+    first_job: # one job runs on one runner. If 'name' is not provided then this will be the name of the job
         name: some randon job
         runs-on: ubuntu-latest
         steps: # one or more steps within a job
