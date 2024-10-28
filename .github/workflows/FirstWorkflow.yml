@@ -1,0 +1,25 @@
+# comment on the reason for this workflow
+# use public repo for unlimited action minutes
+# use github.dev for web based VS code
+# use github.com/marketplace for sample actions
+# use an online github formatter if stuck with indent
+name: First Workflow # name of this workflow. One yml is one workflow
+on: # if editing in github.com, use ctrl+space to show options
+    push: # two tabs per level
+        branches:
+            - main
+            - 'releases/**' # try single quotes for special characters
+    workflow_dispatch:
+jobs: # define one or more jobs
+    first_job: # one job runs on one runner
+        name: some randon job
+        runs-on: ubuntu-latest
+        steps: # one or more steps within a job
+          - name: Say Hello to User # optional
+            run: echo "Hello User from ${{ github.actor }}"
+            shell: bash # optional. windows default to pwsh, non-windows default to bash
+          - name: Say Hello to User v2
+          - run: | # the - and | are only required for multi line scripts
+              echo "Hello User from ${{ github.actor }}"
+              echo "The current branch is ${{ github.ref }}"
+            shell: bash
