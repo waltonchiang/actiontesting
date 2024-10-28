@@ -19,7 +19,7 @@ jobs: # define one or more jobs
             run: echo "Hello User from ${{ github.actor }}"
             shell: bash # optional. windows default to pwsh, non-windows default to bash
           - name: Say Hello to User v2
-          - run: | # the - and | are only required for multi line scripts
+            run: | # the - and | are only required for multi line scripts
               echo "Hello User from ${{ github.actor }}"
               echo "The current branch is ${{ github.ref }}"
             shell: bash
